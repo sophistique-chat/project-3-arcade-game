@@ -1,0 +1,627 @@
+* {
+    box-sizing: border-box;
+}
+
+/*For iPad Pro*/
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        margin-top: 7em;
+        position: relative;
+        display: table;
+        top: 10%;
+        left: 5%;
+    }
+
+    .canvas {
+        max-width: 950px;
+        min-height: 1000px;
+        margin: 0 auto;
+    }
+
+    .keys {
+        display: flex;
+        position: fixed;
+        margin: 0 auto;
+        width: 1000px;
+    }
+    /*ARROW KEYS TAKEN FROM FreeIconsPng.com*/
+    .left {
+        position: inherit;
+        float: left;
+        margin: 16em 0em 0 0;
+        width: 200px;
+        height: 650px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-left.png?raw=true') no-repeat;
+        background-position: -1.7em 50%;
+        background-size: 100px 300px;
+        opacity: 0.5;
+    }
+
+    .right {
+        position: inherit;
+        float: right;
+        margin: 16em 0em 0 64.45em;
+        width: 200px;
+        height: 650px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-right.png?raw=true') no-repeat;
+        background-position: 5.8em 50%;
+        background-size: 100px 300px;
+        opacity: 0.5;
+    }
+
+    .up {
+        position: inherit;
+        float: left;
+        margin: 16em 0 0 20em;
+        width: 450px;
+        height: 370px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-up.png?raw=true') no-repeat;
+        background-position: 50% -1.8em;
+        background-size: 300px 100px;
+        opacity: 0.5;
+    }
+
+    .down {
+        position: inherit;
+        float: left;
+        margin: 53em 0 0 20em;
+        width: 450px;
+        height: 370px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-down.png?raw=true') no-repeat;
+        background-position: 50% 25em;
+        background-size: 350px 100px;
+        opacity: 0.5;
+    }
+
+    .modal1 .message {
+        align-items: center;
+        position: absolute;
+        margin: 0 0 0 -2.5em;
+        padding: 1em 0 0 0;
+        font-size: 2.5em;
+
+    }
+    .modal .message {
+        align-items: center;
+        position: absolute;
+        margin: 0 0 0 -5em;
+        padding: 1em 0 0 0;
+        font-size: 2.5em;
+    }
+
+    .score {
+        align-items: center;
+        position: absolute;
+        margin: 16.5em 0 0 -3.5em;
+        font-size: 2em;
+
+    }
+
+    .modal .numG {
+        margin: 0em 0em 0em 0.3em;
+    }
+
+    .modal,
+    .modal1 {
+        background-size: 28em 28em;
+    }
+
+    .button {
+        position: absolute;
+        margin: 10em 1em 1em 3em;
+        width: 150px;
+        height: 150px;
+        font-size: 2em;
+        background-position: 105% 255%;
+        background-size: 70% 110%;
+        border: 4px solid black;
+    }
+
+    #panel {
+        position: relative;
+        align-content: center;
+        font-size: 2.5em;
+        margin: 0 0 -1em 0;
+    }
+
+}
+
+/*-------------------*/
+
+/*For iPad*/
+
+@media screen and (min-width: 650px) and (max-width: 768px) {
+
+    body {
+        margin-top: 7em;
+        position: relative;
+        display: table;
+        top: 10%;
+        left: 5%;
+    }
+
+    #panel {
+        position: relative;
+        align-content: center;
+        font-size: 2.5em;
+        margin: 0 0 -1em 0;
+    }
+
+    .canvas {
+        display: flex;
+        max-width: 700px;
+        max-height: 1024px;
+        padding-top: 2em;
+        margin: 0 auto;
+    }
+
+    .keys {
+        display: flex;
+        position: fixed;
+        margin: 0 auto;
+    }
+
+    .left {
+        position: inherit;
+        margin: 14em 0 0 0;
+        width: 120px;
+        height: 450px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-left.png?raw=true') no-repeat;
+        background-position: -1em 50%;
+        background-size: 70px 250px;
+        opacity: 0.5;
+    }
+
+    .right {
+        position: inherit;
+        margin: 14em 0 0 50em;
+        width: 120px;
+        height: 450px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-right.png?raw=true') no-repeat;
+        background-position: 5em 50%;
+        background-size: 70px 250px;
+        opacity: 0.5;
+    }
+
+    .up {
+        position: inherit;
+        margin: 14em 0 0 15em;
+        width: 350px;
+        height: 250px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-up.png?raw=true') no-repeat;
+        background-position: 50% -1.2em;
+        background-size: 250px 70px;
+        opacity: 0.5;
+    }
+
+    .down {
+        position: inherit;
+        float: left;
+        margin: 40em 0 0 15em;
+        width: 350px;
+        height: 250px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-down.png?raw=true') no-repeat;
+        background-position: 50% 17em;
+        background-size: 250px 70px;
+        opacity: 0.5;
+    }
+
+    .modal1 .message {
+        align-items: center;
+        position: absolute;
+        margin: 1em 0 0 -2em;
+        padding: 1em 0 0 0;
+        font-size: 1.5em;
+    }
+
+    .modal .message {
+        align-items: center;
+        position: absolute;
+        margin: 0 0 0 -4.5em;
+        padding: 2em 0 0 0;
+        font-size: 1.5em;
+    }
+
+    .score {
+        align-items: center;
+        position: absolute;
+        margin: 13.7em 0 0 -3.5em;
+        font-size: 1.6em;
+    }
+
+    .modal .numG {
+        margin: 0em 0em 0em 0.3em;
+    }
+
+    .modal,
+    .modal1 {
+        background-size: 18em 18em;
+    }
+
+    .button {
+        position: absolute;
+        margin: 11em 1em 1em 3em;
+        width: 100px;
+        height: 100px;
+        font-size: 1.2em;
+        background-position: 105% 255%;
+        background-size: 70% 110%;
+        border: 3px solid black;
+    }
+}
+
+/*-------------------*/
+
+/*For Galaxy S5*/
+
+@media screen and (max-width: 360px) {
+
+    body {
+        position: relative;
+        display: table;
+        top: 10%;
+        left: 0;
+    }
+
+    #panel {
+        position: relative;
+        align-content: center;
+        font-size: 1.5em;
+        margin: 1em 0 -1em 0;
+    }
+
+    .canvas {
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        text-align: center;
+        display: flex;
+        max-width: 340px;
+        max-height: 650px;
+        padding: 1em 0 0 1em;
+        margin: 0 auto;
+    }
+
+    .keys {
+        display: flex;
+        position: fixed;
+        margin: 0 auto;
+    }
+
+    .left {
+        position: inherit;
+        margin: 7em 0 0 1.5em;
+        width: 80px;
+        height: 200px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-left.png?raw=true') no-repeat;
+        background-position: -1em 50%;
+        background-size: 50px 150px;
+        opacity: 0.5;
+    }
+
+    .right {
+        position: inherit;
+        margin: 7em 0 0 22.5em;
+        width: 80px;
+        height: 200px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-right.png?raw=true') no-repeat;
+        background-position: 3em 50%;
+        background-size: 50px 150px;
+        opacity: 0.5;
+    }
+
+    .up {
+        position: inherit;
+        margin: 7em 0 0 9em;
+        width: 150px;
+        height: 120px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-up.png?raw=true') no-repeat;
+        background-position: 50% -1em;
+        background-size: 150px 50px;
+        opacity: 0.5;
+    }
+
+    .down {
+        position: inherit;
+        float: left;
+        margin: 20em 0 0 9em;
+        width: 150px;
+        height: 120px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-down.png?raw=true') no-repeat;
+        background-position: 50% 5.5em;
+        background-size: 150px 50px;
+        opacity: 0.5;
+    }
+
+    .modal1 .message {
+        align-items: center;
+        position: absolute;
+        margin: 0 0 0 -2em;
+        padding: 1em 0 0 0;
+        font-size: 1em;
+    }
+
+    .modal .message {
+        align-items: center;
+        position: absolute;
+        margin: -1em 0 0 -4.5em;
+        padding: 2em 0 0 0;
+        font-size: 1em;
+    }
+
+    .score {
+        align-items: center;
+        position: absolute;
+        margin: 12em 0 0 -3.5em;
+        font-size: 1em;
+    }
+
+    .modal .numG {
+        margin: 0 auto;
+    }
+
+    .modal,
+    .modal1 {
+        background-size: 10em 10em;
+    }
+
+    .button {
+        position: absolute;
+        margin: 9em 1em 1em 2em;
+        width: 70px;
+        height: 70px;
+        font-size: 0.8em;
+        background-position: 105% 255%;
+        background-size: 70% 110%;
+        border: 2px solid black;
+    }
+}
+
+/*-----------------*/
+
+/*For screens with width 450px to 649px*/
+
+@media screen and (min-width: 450px) and (max-width: 649px) {
+
+    body {
+        margin-top: 2em;
+        position: relative;
+        display: table;
+        top: 10%;
+        left: 5%;
+    }
+
+    .canvas {
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        text-align: center;
+        display: flex;
+        max-width: 550px;
+        max-height: 700px;
+        padding: 1em 0 0 1em;
+        margin: 0 auto;
+    }
+
+    .keys {
+        display: flex;
+        position: fixed;
+        margin: 0 auto;
+    }
+
+    .left {
+        position: inherit;
+        margin: 10em 0 0 1.2em;
+        width: 120px;
+        height: 350px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-left.png?raw=true') no-repeat;
+        background-position: -1em 50%;
+        background-size: 70px 250px;
+        opacity: 0.5;
+    }
+
+    .right {
+        position: inherit;
+        margin: 10em 0 0 37em;
+        width: 120px;
+        height: 350px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-right.png?raw=true') no-repeat;
+        background-position: 5em 50%;
+        background-size: 70px 250px;
+        opacity: 0.5;
+    }
+
+    .up {
+        position: inherit;
+        margin: 10em 0 0 13.5em;
+        width: 250px;
+        height: 220px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-up.png?raw=true') no-repeat;
+        background-position: 50% -1.2em;
+        background-size: 250px 70px;
+        opacity: 0.5;
+    }
+
+    .down {
+        position: inherit;
+        float: left;
+        margin: 30em 0 0 13.5em;
+        width: 250px;
+        height: 220px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-down.png?raw=true') no-repeat;
+        background-position: 50% 12.1em;
+        background-size: 250px 70px;
+        opacity: 0.5;
+    }
+
+    .modal1 .message {
+        align-items: center;
+        position: absolute;
+        margin: 1em 0 0 -2em;
+        padding: 1em 0 0 0;
+        font-size: 1.5em;
+
+    }
+    .modal .message {
+        align-items: center;
+        position: absolute;
+        margin: 0 0 0 -4.5em;
+        padding: 0em 0 0 0;
+        font-size: 1.5em;
+    }
+
+    .score {
+        align-items: center;
+        position: absolute;
+        margin: 12.7em 0 0 -3.5em;
+        font-size: 1.6em;
+    }
+
+    .modal .numG {
+        margin: 1em 0em 0em 0.3em;
+    }
+
+    .modal .modal1 {
+        background-size: 15em 15em;
+        display: block;
+        position: fixed;
+        margin: 0 auto;
+    }
+
+    .button {
+        position: absolute;
+        margin: 11em 1em 1em 3em;
+        width: 100px;
+        height: 100px;
+        font-size: 1.2em;
+        background-position: 105% 255%;
+        background-size: 70% 110%;
+        border: 3px solid black;
+    }
+}
+
+/*-------------------------------*/
+
+/*For screens with width 361px to 449px*/
+
+@media screen and (min-width: 361px) and (max-width: 449px) {
+
+    body {
+        margin-top: 2em;
+        position: relative;
+        display: table;
+        top: 10%;
+        left: 5%;
+    }
+
+    .canvas {
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        text-align: center;
+        display: flex;
+        max-width: 360px;
+        max-height: 800px;
+        padding: 3em 0 0 1em;
+        margin: 0 auto;
+    }
+
+    .keys {
+        display: flex;
+        position: fixed;
+        margin: 0 auto;
+    }
+
+    .left {
+        position: inherit;
+        margin: 10em 0 0 1.5em;
+        width: 80px;
+        height: 200px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-left.png?raw=true') no-repeat;
+        background-position: -1em 50%;
+        background-size: 50px 150px;
+        opacity: 0.5;
+    }
+
+    .right {
+        position: inherit;
+        margin: 10em 0 0 24em;
+        width: 80px;
+        height: 200px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-right.png?raw=true') no-repeat;
+        background-position: 3em 50%;
+        background-size: 50px 150px;
+        opacity: 0.5;
+    }
+
+    .up {
+        position: inherit;
+        margin: 10em 0 0 9em;
+        width: 150px;
+        height: 120px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-up.png?raw=true') no-repeat;
+        background-position: 50% -1em;
+        background-size: 150px 50px;
+        opacity: 0.5;
+    }
+
+    .down {
+        position: inherit;
+        float: left;
+        margin: 24.5em 0 0 9em;
+        width: 150px;
+        height: 120px;
+        padding: 0 auto;
+        background: url('https://github.com/sophistique-chat/my-pic-bin/blob/master/arrow-down.png?raw=true') no-repeat;
+        background-position: 50% 5.5em;
+        background-size: 150px 50px;
+        opacity: 0.5;
+    }
+
+    .modal,
+    .modal1 {
+        background-size: 11em 11em;
+    }
+
+    .modal1 .message {
+        align-items: center;
+        position: absolute;
+        margin: 1em 0 0 -2em;
+        font-size: 1em;
+    }
+
+    .modal .message {
+        align-items: center;
+        position: absolute;
+        margin: 1em 0 0 -4.5em;
+        font-size: 1em;
+    }
+
+    .score {
+        align-items: center;
+        position: absolute;
+        margin: 15em 0 0 -3.5em;
+        font-size: 1em;
+    }
+}
