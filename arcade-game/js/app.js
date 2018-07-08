@@ -53,7 +53,7 @@ class Gems {
     }
 
     update(dt) {
-        if (this.y > 400) {
+        if (this.y > 440) {
             this.y = Math.floor((Math.random() * 30) + 50);
         }
         this.y = this.y + this.speed * dt;
@@ -97,7 +97,7 @@ class Player {
     }
 
     update() {
-        if (this.lives > 0) {
+        if (this.lives >= 0) {
             this.checkCollisions();
             this.touch();
         }
@@ -348,7 +348,7 @@ class Player {
         //END ENTER THE HOUSE//
 
         //LOSE FUCTIONALITY//
-        if (this.lives === 0) {
+        if (this.lives < 0) {
             this.lose();
             this.restart();
         }
