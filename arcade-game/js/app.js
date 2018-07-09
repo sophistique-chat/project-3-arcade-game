@@ -94,6 +94,7 @@ class Player {
         this.audioLose = document.querySelector('#loseSound');
         this.collision = document.querySelector('#collision');
         this.bell = document.querySelector('#bell');
+        this.numG = document.querySelector('.numG');
     }
 
     update() {
@@ -337,12 +338,8 @@ class Player {
             gem7.speed = 0;
             //--------------//
             this.modal.style.display = "block";
-            this.modal.innerHTML = `<span class ='message'>
-        You safely reached your home!</span><span class ='score'><i class="far fa-gem"></i> Gems:
-        <span class ='numG'>${this.numGems.innerHTML} </span></span>
-        <span><button type='button' class='restart button'>Play Again</button></span>`;
+            this.numG.innerHTML = `${this.numGems.innerHTML}`;
             this.audioWin.play();
-            this.audioWin.loop === false;
             this.restart();
         }
         //END ENTER THE HOUSE//
@@ -363,7 +360,8 @@ class Player {
     }
 
     restart() {
-        $('.restart').click(function () {
+        $('.button').click(function () {
+            console.log('button pressed!');
             location.reload();
         });
     }
