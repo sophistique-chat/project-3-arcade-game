@@ -135,7 +135,12 @@ class Player {
     //TOUCHSCREEN CONTROLS//
     touch() {
         $(document).ready(function () {
-            $('.up').click(function () {
+            $('.up-left').click(function () {
+                player.y -= 83;
+                this.render();
+            });
+
+            $('.up-right').click(function () {
                 player.y -= 83;
                 this.render();
             });
@@ -150,7 +155,12 @@ class Player {
                 this.render();
             });
 
-            $('.down').click(function () {
+            $('.down-left').click(function () {
+                player.y += 83;
+                this.render();
+            });
+
+            $('.down-right').click(function () {
                 player.y += 83;
                 this.render();
             });
@@ -342,6 +352,7 @@ class Player {
             this.audioWin.play();
             this.restart();
         }
+        
         //END ENTER THE HOUSE//
 
         //LOSE FUCTIONALITY//
