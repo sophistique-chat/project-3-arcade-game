@@ -12,6 +12,11 @@
         margin: 0 auto;
         max-width: 1000px;
     }
+    
+    .controls {
+        background: transparent;
+        border: none !important;
+    }
 
     /*ARROW KEYS TAKEN FROM FreeIconsPng.com*/
     .left {
