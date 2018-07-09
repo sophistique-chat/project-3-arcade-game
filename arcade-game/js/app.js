@@ -1,3 +1,17 @@
+//GLOBAL VARIABLES//
+
+var config = {
+    s_width: 101,
+    s_height: 83,
+    initX: 0,
+    initY: 585,
+    gemOff: -100,
+    coll1: 40,
+    coll2: 83,
+    collH: 60
+}
+//----GLOBAL VARIABLES----//
+
 //------ENEMY CONSTRUCTOR FUNCTION-------//
 
 // Enemies our player must avoid
@@ -110,23 +124,23 @@ class Player {
 
     handleInput(keys) {
         if (keys == 'left') {
-            this.x -= 101;
+            this.x -= config.s_width;
         }
         if (keys == 'up') {
-            this.y -= 83;
+            this.y -= config.s_height;
         }
         if (keys == 'right') {
-            this.x += 101;
+            this.x += config.s_width;
         }
         if (keys == 'down') {
-            this.y += 83;
+            this.y += config.s_height;
         }
         if (this.y < 50 || this.y > 600) {
-            this.x = 0;
-            this.y = 585;
+            this.x = config.initX;
+            this.y = config.initY;
         }
         if (this.x > 700) {
-            this.x = 0;
+            this.x = config.initX;
         }
         if (this.x < 0) {
             this.x = 600;
@@ -136,44 +150,44 @@ class Player {
     touch() {
         $(document).ready(function () {
             $('.up-left').click(function () {
-                player.y -= 83;
+                this.y -= config.s_height;
                 this.render();
             });
 
             $('.up-right').click(function () {
-                player.y -= 83;
+                this.y -= config.s_height;
                 this.render();
             });
 
             $('.left').click(function () {
-                player.x -= 101;
+                this.x -= config.s_width;
                 this.render();
             });
 
             $('.right').click(function () {
-                player.x += 101;
+                this.x += config.s_width;
                 this.render();
             });
 
             $('.down-left').click(function () {
-                player.y += 83;
+                this.y += config.s_height;
                 this.render();
             });
 
             $('.down-right').click(function () {
-                player.y += 83;
+                this.y += config.s_height;
                 this.render();
             });
         });
-        if (player.y < 50 || this.y > 600) {
-            player.x = 0;
-            player.y = 585;
+        if (this.y < 50 || this.y > 600) {
+            this.x = config.initX;
+            this.y = config.initY;
         }
-        if (player.x > 700) {
-            player.x = 0;
+        if (this.x > 700) {
+            this.x = config.initX;
         }
-        if (player.x < 0) {
-            player.x = 600;
+        if (this.x < 0) {
+            this.x = 600;
         }
     }
     //END TOUCHSCREEN CONTROLS//
@@ -183,63 +197,63 @@ class Player {
         //https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 
         //ENEMY COLLISIONS//
-        if (danger1.x <= player.x + 40 &&
-            danger1.x + 40 >= player.x &&
-            danger1.y <= player.y + 40 &&
-            40 + danger1.y >= player.y) {
+        if (danger1.x <= this.x + config.coll1 &&
+            danger1.x + config.coll1 >= this.x &&
+            danger1.y <= this.y + config.coll1 &&
+            config.coll1 + danger1.y >= this.y) {
             this.collision.play();
             this.collision.playbackRate = 3.0;
-            player.y = 585;
+            this.y = config.initY;
             this.lives--;
             this.numLives.innerHTML = `${this.lives}`;
         }
-        if (danger2.x <= player.x + 40 &&
-            danger2.x + 40 >= player.x &&
-            danger2.y <= player.y + 40 &&
-            40 + danger2.y >= player.y) {
+        if (danger2.x <= this.x + config.coll1 &&
+            danger2.x + config.coll1 >= this.x &&
+            danger2.y <= this.y + config.coll1 &&
+            config.coll1 + danger2.y >= this.y) {
             this.collision.playbackRate = 3.0;
             this.collision.play();
-            player.y = 585;
+            this.y = config.initY;
             this.lives--;
             this.numLives.innerHTML = `${this.lives}`;
         }
-        if (danger3.x <= player.x + 40 &&
-            danger3.x + 40 >= player.x &&
-            danger3.y <= player.y + 40 &&
-            40 + danger3.y >= player.y) {
+        if (danger3.x <= this.x + config.coll1 &&
+            danger3.x + config.coll1 >= this.x &&
+            danger3.y <= this.y + config.coll1 &&
+            config.coll1 + danger3.y >= this.y) {
             this.collision.playbackRate = 3.0;
             this.collision.play();
-            player.y = 585;
+            this.y = config.initY;
             this.lives--;
             this.numLives.innerHTML = `${this.lives}`;
         }
-        if (danger4.x <= player.x + 40 &&
-            danger4.x + 40 >= player.x &&
-            danger4.y <= player.y + 40 &&
-            40 + danger4.y >= player.y) {
+        if (danger4.x <= this.x + config.coll1 &&
+            danger4.x + config.coll1 >= this.x &&
+            danger4.y <= this.y + config.coll1 &&
+            config.coll1 + danger4.y >= this.y) {
             this.collision.playbackRate = 3.0;
             this.collision.play();
-            player.y = 585;
+            this.y = config.initY;
             this.lives--;
             this.numLives.innerHTML = `${this.lives}`;
         }
-        if (danger5.x <= player.x + 40 &&
-            danger5.x + 40 >= player.x &&
-            danger5.y <= player.y + 40 &&
-            40 + danger5.y >= player.y) {
+        if (danger5.x <= this.x + config.coll1 &&
+            danger5.x + config.coll1 >= this.x &&
+            danger5.y <= this.y + config.coll1 &&
+            config.coll1 + danger5.y >= this.y) {
             this.collision.playbackRate = 3.0;
             this.collision.play();
-            player.y = 585;
+            this.y = config.initY;
             this.lives--;
             this.numLives.innerHTML = `${this.lives}`;
         }
         //END ENEMY COLLISIONS//
 
         //GEM COLLISIONS//
-        if (gem1.x <= player.x + 40 &&
-            gem1.x + 40 >= player.x &&
-            gem1.y <= player.y + 83 &&
-            83 + gem1.y >= player.y) {
+        if (gem1.x <= this.x + config.coll1 &&
+            gem1.x + config.coll1 >= this.x &&
+            gem1.y <= this.y + config.coll2 &&
+            config.coll2 + gem1.y >= this.y) {
             this.bell.playbackRate = 3.0;
             this.bell.play();
             gem1.y = -100;
@@ -247,10 +261,10 @@ class Player {
             this.numGems.innerHTML = `${this.gems}`;
         }
 
-        if (gem2.x <= player.x + 40 &&
-            gem2.x + 40 >= player.x &&
-            gem2.y <= player.y + 83 &&
-            83 + gem2.y >= player.y) {
+        if (gem2.x <= this.x + config.coll1 &&
+            gem2.x + config.coll1 >= this.x &&
+            gem2.y <= this.y + config.coll2 &&
+            config.coll2 + gem2.y >= this.y) {
             this.bell.playbackRate = 3.0;
             this.bell.play();
             gem2.y = -100;
@@ -258,10 +272,10 @@ class Player {
             this.numGems.innerHTML = `${this.gems}`;
         }
 
-        if (gem3.x <= player.x + 40 &&
-            gem3.x + 40 >= player.x &&
-            gem3.y <= player.y + 83 &&
-            83 + gem3.y >= player.y) {
+        if (gem3.x <= this.x + config.coll1 &&
+            gem3.x + config.coll1 >= this.x &&
+            gem3.y <= this.y + config.coll2 &&
+            config.coll2 + gem3.y >= this.y) {
             this.bell.playbackRate = 3.0;
             this.bell.play();
             gem3.y = -100;
@@ -269,10 +283,10 @@ class Player {
             this.numGems.innerHTML = `${this.gems}`;
         }
 
-        if (gem4.x <= player.x + 40 &&
-            gem4.x + 40 >= player.x &&
-            gem4.y <= player.y + 83 &&
-            83 + gem4.y >= player.y) {
+        if (gem4.x <= this.x + config.coll1 &&
+            gem4.x + config.coll1 >= this.x &&
+            gem4.y <= this.y + config.coll2 &&
+            config.coll2 + gem4.y >= this.y) {
             this.bell.playbackRate = 3.0;
             this.bell.play();
             gem4.y = -100;
@@ -280,10 +294,10 @@ class Player {
             this.numGems.innerHTML = `${this.gems}`;
         }
 
-        if (gem5.x <= player.x + 40 &&
-            gem5.x + 40 >= player.x &&
-            gem5.y <= player.y + 83 &&
-            83 + gem5.y >= player.y) {
+        if (gem5.x <= this.x + config.coll1 &&
+            gem5.x + config.coll1 >= this.x &&
+            gem5.y <= this.y + config.coll2 &&
+            config.coll2 + gem5.y >= this.y) {
             this.bell.playbackRate = 3.0;
             this.bell.play();
             gem5.y = -100;
@@ -291,10 +305,10 @@ class Player {
             this.numGems.innerHTML = `${this.gems}`;
         }
 
-        if (gem6.x <= player.x + 40 &&
-            gem6.x + 40 >= player.x &&
-            gem6.y <= player.y + 83 &&
-            83 + gem6.y >= player.y) {
+        if (gem6.x <= this.x + config.coll1 &&
+            gem6.x + config.coll1 >= this.x &&
+            gem6.y <= this.y + config.coll2 &&
+            config.coll2 + gem6.y >= this.y) {
             this.bell.playbackRate = 3.0;
             this.bell.play();
             gem6.y = -100;
@@ -302,10 +316,10 @@ class Player {
             this.numGems.innerHTML = `${this.gems}`;
         }
 
-        if (gem7.x <= player.x + 40 &&
-            gem7.x + 40 >= player.x &&
-            gem7.y <= player.y + 83 &&
-            83 + gem7.y >= player.y) {
+        if (gem7.x <= this.x + config.coll1 &&
+            gem7.x + config.coll1 >= this.x &&
+            gem7.y <= this.y + config.coll2 &&
+            config.coll2 + gem7.y >= this.y) {
             this.bell.playbackRate = 3.0;
             this.bell.play();
             gem7.x = -100;
@@ -315,30 +329,30 @@ class Player {
         //END GEM COLLISIONS//
 
         //ENTER THE HOUSE//
-        if (home.x <= player.x + 60 &&
-            home.x + 60 >= player.x &&
-            home.y <= player.y + 60 &&
-            60 + home.y >= player.y) {
+        if (home.x <= this.x + config.collH &&
+            home.x + config.collH >= this.x &&
+            home.y <= this.y + config.collH &&
+            config.collH + home.y >= this.y) {
             //This is to make sure no collisions will 
             //happen after win modal appears
-            player.x = -300;
-            danger1.x = -100;
-            danger2.x = -100;
-            danger3.x = -100;
-            danger4.x = -100;
-            danger5.x = -100;
+            this.x = -300;
+            danger1.x = config.gemOff;
+            danger2.x = config.gemOff;
+            danger3.x = config.gemOff;
+            danger4.x = config.gemOff;
+            danger5.x = config.gemOff;
             danger1.speed = 0;
             danger2.speed = 0;
             danger3.speed = 0;
             danger4.speed = 0;
             danger5.speed = 0;
-            gem1.y = -100;
-            gem2.y = -100;
-            gem3.y = -100;
-            gem4.y = -100;
-            gem5.y = -100;
-            gem6.y = -100;
-            gem7.y = -100;
+            gem1.y = config.gemOff;
+            gem2.y = config.gemOff;
+            gem3.y = config.gemOff;
+            gem4.y = config.gemOff;
+            gem5.y = config.gemOff;
+            gem6.y = config.gemOff;
+            gem7.y = config.gemOff;
             gem1.speed = 0;
             gem2.speed = 0;
             gem3.speed = 0;
@@ -363,16 +377,16 @@ class Player {
     }
 
     lose() {
-        player.x = -300;
+        this.x = -300;
         this.modal1.style.display = "block";
+        let that = this;
         setTimeout(function () {
-            player.audioLose.play();
+            that.audioLose.play();
         }, 500);
     }
 
     restart() {
         $('.button').click(function () {
-            console.log('button pressed!');
             location.reload();
         });
     }
