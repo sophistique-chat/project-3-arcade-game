@@ -38,7 +38,7 @@
     - wins;
     - loses.
 * The Game is optimized for various screen sizes.
-* Mobile version of the game is supplied with four control buttons.
+* Mobile version of the game is supplied with six control buttons(three on each side for better UX).
 ----
 ----
 #### **NOTE**
